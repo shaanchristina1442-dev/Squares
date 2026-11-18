@@ -28,6 +28,15 @@ function getRandomColor(){
     return color;
 }; 
 
+function changeColor(){
+    let squares = squareArea.children;
+    for (let i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = getRandomColor();
+    };
+    
+}; 
+ 
+document.getElementById("change").addEventListener("click", changeColor);
 
 
 
