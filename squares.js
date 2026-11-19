@@ -1,4 +1,5 @@
 let squareArea;
+let topZ = 0;
 window.onload = function(){
     squareArea = document.querySelector("#squarearea");
     let squareCount = parseInt(Math.random()*21)+30;
@@ -24,17 +25,17 @@ function addSquare(){
 
     square.style.top = parseInt(Math.random()*(300-50))+"px";
     square.style.left = parseInt(Math.random()*(700-50))+"px";
+    square.onclick = squareClick;
     squareArea.append(square);
 };
 
 function squareClick(){
-    let topZ = 0;
-    if(parseInt(this.style.index === topZ)){
-        topZ.remove();
+    if(parseInt(this.style.zIndex) === topZ){
+        this.remove();
     }
     else{
         topZ++;
-        this.style.index = topZ;
+        this.style.zIndex = topZ;
     };
 
 };
