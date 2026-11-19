@@ -1,6 +1,17 @@
-let squareArea = document.querySelector("#squarearea");
-let squareCount = parseInt(Math.random()*21)+30; //30-50
-document.querySelector('#add').onclick = addSquare;
+let squareArea;
+window.onload = function(){
+    squareArea = document.querySelector("#squarearea");
+    let squareCount = parseInt(Math.random()*21)+30;
+
+    document.getElementById("change").addEventListener("click", changeColor);
+    document.querySelector('#add').onclick = addSquare;
+
+    for(let i = 0; i < squareCount; i++){
+        addSquare();
+    };
+
+
+};
 
 function addSquare(){
     let square = document.createElement("div");
@@ -16,10 +27,6 @@ function addSquare(){
     squareArea.append(square);
 };
 
-
-for(let i = 0; i < squareCount; i++){
-    addSquare();
-};
 
 function getRandomColor(){
     let possibleLetters = "0123456789ABCDEF";
