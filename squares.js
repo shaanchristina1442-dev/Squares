@@ -27,6 +27,18 @@ function addSquare(){
     squareArea.append(square);
 };
 
+function squareClick(){
+    let topZ = 0;
+    if(parseInt(this.style.index === topZ)){
+        topZ.remove();
+    }
+    else{
+        topZ++;
+        this.style.index = topZ;
+    };
+
+};
+
 
 function getRandomColor(){
     let possibleLetters = "0123456789ABCDEF";
